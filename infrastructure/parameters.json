@@ -4,6 +4,12 @@
     "parameters": {
         "acrSku":{
             "value": "Basic"   
+        },
+        "appServicePlanSkuName": {
+            "value": "S1"
+        },
+        "appServicePlanInstanceCount": {
+            "value": 1
         }
     }
 }
