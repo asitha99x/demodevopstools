@@ -26,7 +26,7 @@ var appSettings = [
   }
   {
     name: 'WEBSITES_PORT'
-    value: '80'
+    value: '3000'
   }
   {
     name: 'DOCKER_REGISTRY_SERVER_URL'
