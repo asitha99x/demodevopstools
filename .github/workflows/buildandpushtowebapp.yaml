@@ -45,6 +45,8 @@ jobs:
       - name: check
         run: |
           echo ========================================
+          pwd
+          echo ========================================
           ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
           echo ========================================
           ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
