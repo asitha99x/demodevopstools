@@ -23,7 +23,6 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      
       # Setup .NET Core SDK
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
@@ -36,35 +35,9 @@ jobs:
           dotnet restore
           dotnet build --configuration Release
           dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
-          echo ========================================
-          ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
-          (cd myapp && zip -r ../package.zip .)
-          echo ========================================
-          ls ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-          
-      - name: check
-        run: |
-          echo ========================================
-          pwd
-          echo ========================================
-          ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
-          echo ========================================
-          ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
-  
-      - uses: Azure/cli@v1
-        name: aswelk deploy
-        with:
-          inlineScript: |
-            pwd
-            ls
-            echo ========================================
-            ls ./application/SampleWeb
-            az account list
-#            az webapp deploy --resource-group ${{ secrets.AZURE_RG }} --name ${{ env.AZURE_WEBAPP_NAME }} --src-path package.zip
-    
           
       # Deploy to Azure Web apps
-      - name: 'Run Azure webapp deploy action using publish profile credentials'
+      - name: 'Run Azure webapp deploy action using SPN'
         uses: azure/webapps-deploy@v2
         with: 
           app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
