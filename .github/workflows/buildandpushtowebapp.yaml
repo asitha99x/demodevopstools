@@ -49,6 +49,13 @@ jobs:
           echo ========================================
           ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
           
+      - uses: Azure/cli@v1
+        name: aswelk deploy
+        with:
+          inlineScript: |
+            az account list
+    
+          
 #       # Deploy to Azure Web apps
 #       - name: 'Run Azure webapp deploy action using publish profile credentials'
 #         uses: azure/webapps-deploy@v2
