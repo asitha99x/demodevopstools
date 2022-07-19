@@ -6,7 +6,7 @@ param appServiceName string = toLower('asp-${webAppName}')
 param appServicePlanSkuName string
 param appServicePlanInstanceCount int
 
-var appServiceSlotName = 'blue'
+var appServiceSlotName = 'staging'
 
 param location string = resourceGroup().location
 
@@ -36,6 +36,5 @@ module appService 'appService.bicep' = {
     appServiceName: appServiceName
     serverFarmId: appServicePlan.outputs.appServicePlanId
     appServiceSlotName: appServiceSlotName
-    acrName: acrName
   }
 }

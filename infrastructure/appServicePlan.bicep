@@ -3,16 +3,28 @@ param appServicePlanLocation string
 param appServicePlanSkuName string
 param appServicePlanCapacity int
 
-resource appServicePlan 'Microsoft.Web/serverfarms@2021-02-01' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2021-03-01' = {
   name: appServicePlanName
   location: appServicePlanLocation
   sku: {
+    tier: 'Standard'
+    size: 'S1'
+    family: 'S'
     name: appServicePlanSkuName
     capacity: appServicePlanCapacity
   }
-  kind: 'linux'
+  kind: 'app'
   properties: {
-    reserved: true
+    perSiteScaling: false
+    elasticScaleEnabled: false
+    maximumElasticWorkerCount: 1
+    isSpot: false
+    reserved: false
+    isXenon: false
+    hyperV: false
+    targetWorkerCount: 0
+    targetWorkerSizeId: 0
+    zoneRedundant: false
   }
 }
 
