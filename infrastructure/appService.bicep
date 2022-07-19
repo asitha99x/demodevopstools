@@ -25,10 +25,6 @@ var appSettings = [
     value: 'false'
   }
   {
-    name: 'WEBSITES_PORT'
-    value: '3000'
-  }
-  {
     name: 'DOCKER_REGISTRY_SERVER_URL'
     value: 'https://${containerRegistry.properties.loginServer}'
   }
