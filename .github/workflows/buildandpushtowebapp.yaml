@@ -53,8 +53,10 @@ jobs:
         name: aswelk deploy
         with:
           inlineScript: |
+            pwd
+            ls
             az account list
-            az webapp deploy --resource-group ${{ secrets.AZURE_RG }} --name ${{ env.AZURE_WEBAPP_NAME }} --src-path package.zip
+#            az webapp deploy --resource-group ${{ secrets.AZURE_RG }} --name ${{ env.AZURE_WEBAPP_NAME }} --src-path package.zip
     
           
 #       # Deploy to Azure Web apps
