@@ -50,8 +50,7 @@ jobs:
           ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
           echo ========================================
           ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
-          
-      - uses: actions/checkout@v2    
+  
       - uses: Azure/cli@v1
         name: aswelk deploy
         with:
