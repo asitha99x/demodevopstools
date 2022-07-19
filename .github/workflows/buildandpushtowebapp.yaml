@@ -54,6 +54,7 @@ jobs:
         with:
           inlineScript: |
             az account list
+            az webapp deploy --resource-group ${{ secrets.AZURE_RG }} --name ${{ env.AZURE_WEBAPP_NAME }} --src-path package.zip
     
           
 #       # Deploy to Azure Web apps
