@@ -2,8 +2,8 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 html body {
-  background-color: rgb(98, 214, 147);
-  color: rgb(0, 0, 0);
+  background-color: rgb(100, 98, 214);
+  color: rgb(255, 255, 255);
 }
 
 a.navbar-brand {
